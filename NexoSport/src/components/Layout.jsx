@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { SessionProvider } from "../context/SessionContext.jsx";
+import NavBar from "./NavBar.jsx";
+import Footer from "./Footer.jsx";
 
-function Layout() {
+const Layout = ({ children, url, ...rest }) => {
     return (
-        <div>Layout</div>
-    )
-}
+        <SessionProvider>
+            <div {...rest}>
+                <NavBar url={url} />
+                {children}
+                { <Footer /> }
+            </div>
+        </SessionProvider>
+    );
+};
 
-export default Layout
+export default Layout;

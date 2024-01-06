@@ -1,9 +1,15 @@
-import React from 'react'
+import MyTeams from "./MyTeams";
 
-function MyTeamsList() {
+const List = ({ teamsList }) => {
     return (
-        <div>MyTeamsList</div>
-    )
-}
+        <>
+            <ul>
+                {teamsList.map(teams => (
+                    <MyTeams key={teams._id} myTeams={teams} />
+                ))}
+            </ul>
+        </>
+    );
+};
 
-export default MyTeamsList
+export default List;

@@ -1,9 +1,15 @@
-import React from 'react'
+import History from "./History.jsx";
 
-function HistoryList() {
+const List = ({ historyList }) => {
     return (
-        <div>HistoryList</div>
-    )
-}
+        <>
+            <ul>
+                {historyList.map((history) => (
+                    <History key={history._id} history={history} />
+                ))}
+            </ul>
+        </>
+    );
+};
 
-export default HistoryList
+export default List;

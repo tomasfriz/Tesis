@@ -1,9 +1,15 @@
-import React from 'react'
+import Teams from "./Teams.jsx";
 
-function TeamsList() {
+const List = ({ teamsList }) => {
     return (
-        <div>TeamsList</div>
-    )
-}
+        <>
+            <ul>
+                {teamsList.map((teams) => (
+                    <Teams key={teams._id} teams={teams} />
+                ))}
+            </ul>
+        </>
+    );
+};
 
-export default TeamsList
+export default List;
